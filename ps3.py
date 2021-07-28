@@ -213,6 +213,10 @@ def calculate_handlen(hand):
     pass  # TO DO... Remove this line when you implement this function
 
 
+def letter_score(letter):
+    return SCRABBLE_LETTER_VALUES.get(letter)
+
+
 def play_hand(hand, word_list):
     """
     Allows the user to play the given hand, as follows:
