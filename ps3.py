@@ -214,7 +214,7 @@ def calculate_handlen(hand):
 
 
 def letter_score(letter):
-    return SCRABBLE_LETTER_VALUES.get(letter)
+    return SCRABBLE_LETTER_VALUES.get(letter, 0)
 
 
 def play_hand(hand, word_list):
