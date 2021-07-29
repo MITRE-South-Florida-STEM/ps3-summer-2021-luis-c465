@@ -39,7 +39,7 @@ def display_hand(hand: dict) -> None:
 #
 
 
-def deal_hand(n):
+def deal_hand(n: int) -> dict:
     """
     Returns a random hand containing n lowercase letters.
     ceil(n/3) letters in the hand should be VOWELS (note,
