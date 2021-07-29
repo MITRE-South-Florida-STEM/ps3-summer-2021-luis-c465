@@ -151,12 +151,12 @@ def play_hand(hand: dict, word_list: list) -> int:
 
         # Otherwise (the input is not two exclamation points):
         # If the word is valid:
-        if is_valid_word(user_input):
         if is_valid_word(user_input, hand, word_list):
+
             # Tell the user how many points the word earned,
             # and the updated total score
-            word_score = get_word_score(user_input)
             word_score = get_word_score(user_input, HAND_SIZE)
+            total_score += word_score
             print(
                 f"\"{user_input}\" earned {word_score} points. Total: {total_score} points ")
 
