@@ -102,7 +102,7 @@ def update_hand(hand: dict, word: str) -> dict:
     return updated_hand
 
 
-def play_hand(hand: int, word_list: list) -> int:
+def play_hand(hand: dict, word_list: list) -> int:
     """
     Allows the user to play the given hand, as follows:
 
