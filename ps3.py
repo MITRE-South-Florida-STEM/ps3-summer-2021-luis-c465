@@ -172,7 +172,7 @@ def play_hand(hand: dict, word_list: list) -> int:
 
     # Game is over (user entered '!!' or ran out of letters),
     # so tell user the total score
-    print(f"Total score for this hand: {total_score}")
+    print(f"Total score for this hand: {total_score} points")
     print("----------")
 
     # Return the total score as result of function
@@ -280,6 +280,7 @@ def play_game(word_list: list) -> int:
                 # FIXME
         hands_played += 1
 
+    print(f"Total score over all hands: {total_score}")
     return total_score
 
 
