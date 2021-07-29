@@ -9,7 +9,6 @@
 
 import math
 import random
-import string
 from gameutil import *
 
 HAND_SIZE = 7
