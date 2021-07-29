@@ -87,6 +87,7 @@ def is_valid_word(word, hand, word_list):
         if key not in hand.keys():
             return False
     for pair in word_freq_dict.items():
+        # If pair value is greater than corresponding hand value
         if pair[1] > hand[pair[0]]:
             return False
     return True
