@@ -93,7 +93,7 @@ def update_hand(hand, word):
     pass  # TO DO... Remove this line when you implement this function
 
 
-def play_hand(hand, word_list):
+def play_hand(hand: int, word_list: list) -> int:
     """
     Allows the user to play the given hand, as follows:
 
