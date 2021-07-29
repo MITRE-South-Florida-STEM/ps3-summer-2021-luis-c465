@@ -219,7 +219,9 @@ def substitute_hand(hand: dict, letter: str) -> dict:
         if new_letter not in hand.keys() and new_letter != letter:
             break
 
-    substituted_hand[letter] = new_letter
+    old_letter_num = hand[letter]
+    substituted_hand.pop(letter)
+    substituted_hand[new_letter] = old_letter_num
     return substituted_hand
 
 
