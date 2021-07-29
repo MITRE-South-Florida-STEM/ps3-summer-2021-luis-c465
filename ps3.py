@@ -71,7 +71,7 @@ def deal_hand(n):
 #
 
 
-def update_hand(hand, word):
+def update_hand(hand: dict, word: str) -> dict:
     """
     Does NOT assume that hand contains every letter in word at least as
     many times as the letter appears in word. Letters in word that don't
