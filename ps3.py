@@ -13,6 +13,7 @@ import string
 from gameutil import *
 
 HAND_SIZE = 7
+CURRENT_HAND_MSG = "Current hand: "
 
 
 def display_hand(hand: dict) -> None:
@@ -138,6 +139,7 @@ def play_hand(hand: dict, word_list: list) -> int:
     # As long as there are still letters left in the hand:
     while hand.keys() != 0:
         # Display the hand
+        print(CURRENT_HAND_MSG, end='')
         display_hand(hand)
 
         # Ask user for input
@@ -261,7 +263,7 @@ def play_game(word_list: list) -> int:
     hands_played = 0
     while num_of_hands > hands_played:
         hand = deal_hand(HAND_SIZE)
-        print("Current hand: ", end='')
+        print(CURRENT_HAND_MSG, end='')
         display_hand(hand)
 
         subst_hand = input("Would you like to substitute a letter? ").lower()
