@@ -163,7 +163,7 @@ def play_hand(hand: int, word_list: list) -> int:
 # procedure you will use to substitute a letter in a hand
 #
 
-def substitute_hand(hand, letter):
+def substitute_hand(hand: dict, letter: str) -> dict:
     """ 
     Allow the user to replace all copies of one letter in the hand (chosen by user)
     with a new letter chosen from the VOWELS and CONSONANTS at random. The new letter
