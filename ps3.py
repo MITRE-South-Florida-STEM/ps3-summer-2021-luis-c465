@@ -134,7 +134,6 @@ def play_hand(hand: dict, word_list: list) -> int:
 
     # Keep track of the total score
     total_score = 0
-    hand = deal_hand()
 
     # As long as there are still letters left in the hand:
     while hand.keys() != 0:
