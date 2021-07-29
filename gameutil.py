@@ -44,7 +44,18 @@ def get_word_score(word, n):
     returns: int >= 0
     """
 
-    pass  # TO DO... Remove this line when you implement this function
+    sum_letter_score = 0
+    for letter in word.lower():
+        sum_letter_score += letter_score(letter)
+
+    wordlen = len(word)
+    num_word = 7*wordlen - 3*(n-wordlen)
+    if 1 > num_word:
+        larger = 1
+    else:
+        larger = num_word
+
+    return sum_letter_score * larger
 
 #
 # Make sure you understand how this function works and what it does!
