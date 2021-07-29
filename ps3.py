@@ -209,7 +209,18 @@ def substitute_hand(hand: dict, letter: str) -> dict:
     returns: dictionary (string -> int)
     """
 
-    pass  # TO DO... Remove this line when you implement this function
+    if letter not in hand.keys():
+        return hand
+
+    substituted_hand = hand.copy()
+    available_letters = VOWELS + CONSONANTS
+    while True:
+        new_letter = random.choice(available_letters)
+        if new_letter not in hand.keys() and new_letter != letter:
+            break
+
+    substituted_hand[letter] = new_letter
+    return substituted_hand
 
 
 def play_game(word_list: list) -> int:
