@@ -78,8 +78,18 @@ def is_valid_word(word, hand, word_list):
     word_list: list of lowercase strings
     returns: boolean
     """
+    word_lower = word.lower()
+    if word_lower not in word_list:
+        return False
+    word_freq_dict = get_frequency_dict(word_lower)
 
-    pass  # TO DO... Remove this line when you implement this function
+    for key in word_freq_dict.keys():
+        if key not in hand.keys():
+            return False
+    for pair in word_freq_dict.items():
+        if pair[1] > hand[pair[0]]:
+            return False
+    return True
 
 #
 # Problem #5: Playing a hand
