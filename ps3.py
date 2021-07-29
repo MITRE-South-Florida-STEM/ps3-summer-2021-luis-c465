@@ -90,7 +90,15 @@ def update_hand(hand: dict, word: str) -> dict:
     returns: dictionary (string -> int)
     """
 
-    pass  # TO DO... Remove this line when you implement this function
+    updated_hand = hand.copy()
+    for letter in word.lower():
+        value = updated_hand.get(letter, None)
+        if value != None:
+            if value == 1:
+                updated_hand.pop(letter)
+            else:
+                updated_hand[letter] -= 1
+    return updated_hand
 
 
 def play_hand(hand: int, word_list: list) -> int:
