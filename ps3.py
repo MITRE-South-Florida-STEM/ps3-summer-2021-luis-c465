@@ -189,7 +189,7 @@ def substitute_hand(hand: dict, letter: str) -> dict:
     pass  # TO DO... Remove this line when you implement this function
 
 
-def play_game(word_list):
+def play_game(word_list: list) -> int:
     """
     Allow the user to play a series of hands
 
