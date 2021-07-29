@@ -1,6 +1,7 @@
 import math
 import random
 import string
+import re
 
 VOWELS = 'aeiou'
 CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
@@ -62,6 +63,9 @@ def get_word_score(word, n):
 #
 
 
+def wildcard_to_regex(word: str) -> re:
+    return re.compile("^" + word.replace("*", ".") + "$")
+
 #
 # Problem #3: Test word validity
 #
@@ -79,10 +83,12 @@ def is_valid_word(word, hand, word_list):
     returns: boolean
     """
     word_lower = word.lower()
-    if word_lower not in word_list:
+    regex = wildcard_to_regex(word_lower)
+    num_matches = len(list(filter(regex.match, word_list)))
+    if num_matches == 0:
         return False
-    word_freq_dict = get_frequency_dict(word_lower)
 
+    word_freq_dict = get_frequency_dict(word_lower)
     for key in word_freq_dict.keys():
         if key not in hand.keys():
             return False
