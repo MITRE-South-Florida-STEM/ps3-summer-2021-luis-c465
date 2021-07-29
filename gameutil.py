@@ -111,7 +111,10 @@ def calculate_handlen(hand):
     returns: integer
     """
 
-    pass  # TO DO... Remove this line when you implement this function
+    sum = 0
+    for value in hand.values():
+        sum += value
+    return sum
 
 
 # -----------------------------------
