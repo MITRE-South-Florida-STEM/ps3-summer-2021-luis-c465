@@ -221,7 +221,8 @@ def play_game(word_list: list) -> int:
     """
 
     # TO DO... Remove this line when you implement this function
-    print("play_game not implemented.")
+    num_of_hands = input("Enter total number of hands: ")
+    total_score = 0
 
 
 #
