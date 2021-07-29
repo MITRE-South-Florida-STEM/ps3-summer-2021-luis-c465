@@ -15,7 +15,7 @@ from gameutil import *
 HAND_SIZE = 7
 
 
-def display_hand(hand):
+def display_hand(hand: dict) -> None:
     """
     Displays the letters currently in the hand.
 
