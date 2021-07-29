@@ -5,7 +5,7 @@
 #
 # Name          : Luis Canada
 # Collaborators : None
-# Time spent    : <total time>
+# Time spent    : ~3 Hours
 
 import math
 import random
