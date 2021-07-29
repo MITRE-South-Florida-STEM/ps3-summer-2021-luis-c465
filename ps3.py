@@ -171,6 +171,7 @@ def play_hand(hand: dict, word_list: list) -> int:
     # Game is over (user entered '!!' or ran out of letters),
     # so tell user the total score
     print(f"Total score: {total_score} points")
+    print("----------")
 
     # Return the total score as result of function
     return total_score
@@ -255,9 +256,29 @@ def play_game(word_list: list) -> int:
     word_list: list of lowercase strings
     """
 
-    # TO DO... Remove this line when you implement this function
-    num_of_hands = input("Enter total number of hands: ")
+    num_of_hands = int(input("Enter total number of hands: "))
     total_score = 0
+    hands_played = 0
+    while num_of_hands > hands_played:
+        hand = deal_hand(HAND_SIZE)
+        print("Current hand: ", end='')
+        display_hand(hand)
+
+        subst_hand = input("Would you like to substitute a letter? ").lower()
+        if subst_hand == "yes":
+            subst_letter = input("Which letter would you like to replace: ")
+            hand = substitute_hand(hand, subst_letter)
+
+        total_score += play_hand(hand, word_list)
+        if num_of_hands - hands_played > 1:
+            replay_hand = input("Would you like to replay the hand? ").lower()
+            if replay_hand == "yes":
+                total_score += play_hand(hand, word_list)
+                hands_played += 1
+                # FIXME
+        hands_played += 1
+
+    return total_score
 
 
 #
