@@ -12,7 +12,6 @@ import random
 from gameutil import *
 
 HAND_SIZE = 7
-CURRENT_HAND_MSG = "Current hand: "
 
 
 def display_hand(hand: dict, message="Current hand: ") -> None:
