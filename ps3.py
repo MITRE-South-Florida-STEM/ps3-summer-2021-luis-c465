@@ -15,7 +15,7 @@ HAND_SIZE = 7
 CURRENT_HAND_MSG = "Current hand: "
 
 
-def display_hand(hand: dict) -> None:
+def display_hand(hand: dict, message="Current hand: ") -> None:
     """
     Displays the letters currently in the hand.
 
@@ -28,6 +28,7 @@ def display_hand(hand: dict) -> None:
     hand: dictionary (string -> int)
     """
 
+    print(message, end='')
     for letter in hand.keys():
         for j in range(hand[letter]):
             print(letter, end=' ')      # print all on the same line
@@ -138,7 +139,6 @@ def play_hand(hand: dict, word_list: list) -> int:
     # As long as there are still letters left in the hand:
     while hand.keys() != 0:
         # Display the hand
-        print(CURRENT_HAND_MSG, end='')
         display_hand(hand)
 
         # Ask user for input
@@ -262,7 +262,6 @@ def play_game(word_list: list) -> int:
     hands_played = 0
     while num_hands > hands_played:
         hand = deal_hand(HAND_SIZE)
-        print(CURRENT_HAND_MSG, end='')
         display_hand(hand)
 
         subst_hand = input("Would you like to substitute a letter? ").lower()
