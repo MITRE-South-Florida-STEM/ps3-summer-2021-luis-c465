@@ -128,12 +128,12 @@ def load_words():
     """
 
     print("Loading word list from file...")
-    # inFile: file
-    inFile = open(WORDLIST_FILENAME, 'r')
     # wordlist: list of strings
     wordlist = []
-    for line in inFile:
-        wordlist.append(line.strip().lower())
+    with open(WORDLIST_FILENAME, 'r') as inFile:
+        for line in inFile:
+            wordlist.append(line.strip().lower())
+
     print("  ", len(wordlist), "words loaded.")
     return wordlist
 
