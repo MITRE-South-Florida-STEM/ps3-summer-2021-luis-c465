@@ -271,7 +271,8 @@ def play_game(word_list: list) -> int:
             hand = substitute_hand(hand, subst_letter)
 
         total_score += play_hand(hand, word_list)
-        if num_hands - hands_played > 1:
+        hands_remaining = num_hands - hands_played
+        if hands_remaining > 1:
             replay_hand = input("Would you like to replay the hand? ").lower()
             if replay_hand == "yes":
                 total_score += play_hand(hand, word_list)
