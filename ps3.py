@@ -257,10 +257,10 @@ def play_game(word_list: list) -> int:
     word_list: list of lowercase strings
     """
 
-    num_of_hands = int(input("Enter total number of hands: "))
+    num_hands = int(input("Enter total number of hands: "))
     total_score = 0
     hands_played = 0
-    while num_of_hands > hands_played:
+    while num_hands > hands_played:
         hand = deal_hand(HAND_SIZE)
         print(CURRENT_HAND_MSG, end='')
         display_hand(hand)
@@ -271,7 +271,7 @@ def play_game(word_list: list) -> int:
             hand = substitute_hand(hand, subst_letter)
 
         total_score += play_hand(hand, word_list)
-        if num_of_hands - hands_played > 1:
+        if num_hands - hands_played > 1:
             replay_hand = input("Would you like to replay the hand? ").lower()
             if replay_hand == "yes":
                 total_score += play_hand(hand, word_list)
