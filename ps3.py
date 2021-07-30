@@ -277,7 +277,7 @@ def play_game(word_list: list) -> int:
             if replay_hand == "yes":
                 total_score += play_hand(hand, word_list)
                 hands_played += 1
-                # FIXME
+
         hands_played += 1
 
     print(f"Total score over all hands: {total_score}")
