@@ -265,7 +265,8 @@ def play_game(word_list: list) -> int:
 
         subst_hand = get_input("Would you like to substitute a letter? ")
         if subst_hand == "yes":
-            subst_letter = input("Which letter would you like to replace: ")
+            subst_letter = get_input(
+                "Which letter would you like to replace: ")
             hand = substitute_hand(hand, subst_letter)
 
         hand_score = play_hand(hand, word_list)
