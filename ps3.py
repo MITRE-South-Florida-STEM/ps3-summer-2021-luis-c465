@@ -257,10 +257,9 @@ def play_game(word_list: list) -> int:
     word_list: list of lowercase strings
     """
 
-    num_hands = int(input("Enter total number of hands: "))
     total_score = 0
-    hands_played = 0
-    while num_hands > hands_played:
+    num_hands = int(get_input("Enter total number of hands: "))
+    for hands_played in range(num_hands):
         hand = deal_hand(HAND_SIZE)
         display_hand(hand)
 
@@ -275,7 +274,6 @@ def play_game(word_list: list) -> int:
             hand_score = play_hand(hand, word_list)
 
         total_score += hand_score
-        hands_played += 1
 
     print(f"Total score over all hands: {total_score}")
     return total_score
