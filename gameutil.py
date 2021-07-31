@@ -114,6 +114,8 @@ def calculate_handlen(hand):
     return sum
 
 
+def get_input(message: str):
+    return input(message).strip().lower()
 # -----------------------------------
 # Helper code
 # (you don't need to understand this helper code)
