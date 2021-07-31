@@ -264,19 +264,19 @@ def play_game(word_list: list) -> int:
         hand = deal_hand(HAND_SIZE)
         display_hand(hand)
 
-        subst_hand = input("Would you like to substitute a letter? ").lower()
+        subst_hand = input(
+            "Would you like to substitute a letter? ").lower().strip()
         if subst_hand == "yes":
             subst_letter = input("Which letter would you like to replace: ")
             hand = substitute_hand(hand, subst_letter)
 
-        total_score += play_hand(hand, word_list)
-        hands_remaining = num_hands - hands_played
-        if hands_remaining > 1:
-            replay_hand = input("Would you like to replay the hand? ").lower()
-            if replay_hand == "yes":
-                total_score += play_hand(hand, word_list)
-                hands_played += 1
+        hand_score = play_hand(hand, word_list)
+        replay_hand = input(
+            "Would you like to replay the hand? ").lower().strip()
+        if replay_hand == "yes":
+            hand_score = play_hand(hand, word_list)
 
+        total_score += hand_score
         hands_played += 1
 
     print(f"Total score over all hands: {total_score}")
