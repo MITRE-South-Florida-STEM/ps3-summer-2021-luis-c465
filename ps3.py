@@ -214,13 +214,14 @@ def substitute_hand(hand: dict, letter: str) -> dict:
 
     substituted_hand = hand.copy()
     available_letters = VOWELS + CONSONANTS
-    while True:
-        new_letter = random.choice(available_letters)
-        if new_letter not in hand.keys() and new_letter != letter:
-            break
+    for key in hand.keys():
+        available_letters.replace(key, "")
+    available_letters.replace(letter, "")
 
     old_letter_num = hand[letter]
     substituted_hand.pop(letter)
+
+    new_letter = random.choice(available_letters)
     substituted_hand[new_letter] = old_letter_num
     return substituted_hand
 
