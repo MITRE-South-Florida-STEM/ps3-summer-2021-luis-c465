@@ -142,7 +142,7 @@ def play_hand(hand: dict, word_list: list) -> int:
 
         # Ask user for input
         input_msg = "Enter word, or \"!!\" to indicate that you are finished: "
-        user_input = input(input_msg)
+        user_input = get_input(input_msg)
 
         # If the input is two exclamation points:
         if user_input == "!!":
